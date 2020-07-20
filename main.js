@@ -20,7 +20,12 @@ submission = () => {
     console.log(document.getElementById("inputFirstName").value);
     console.log(fName);
     console.log("testing fName");
-    makeAjaxCall(fName);
+
+    if(fName.length >= 3 )
+    {
+        makeAjaxCall(fName);
+    }
+   
 
 }
     const makeAjaxCall = (fName) => {
