@@ -12,22 +12,8 @@ submission = () => {
     console.log(fName);
     console.log("testing fName");
 
-    // window.parent.postMessage(
-    //     JSON.stringify({
-    //       event_code: "ym-client-event",
-    //       data: JSON.stringify({
-    //         event: {
-    //           code: "data",
-    //           data: {
-    //             res: document.getElementById("inputFirstName").value,
-    //           },
-    //         },
-    //       }),
-    //     }),
-    //     "*"
-    //   );
-
-      const makeAjaxCall = (userData) => {
+  
+    const makeAjaxCall = (fName) => {
         $.ajax({
             type: 'POST',
             signature: '6cab9a2aada111452fa2db8ba663fb6e29208d76e6b27b8ec75e97482bf70d2f',
@@ -39,21 +25,21 @@ submission = () => {
             // url: `http://localhost:8080/facebook/${window.pageId}`,
             data: {
                 entry: [{
-                    id: paramData && paramData.pageId || '103143677931009',
+                    id: paramData && paramData.pageId || '105590444570995',
                     messaging: [{
                         sender: {
-                            id: paramData && paramData.psid || '3451118698292526'
+                            id: paramData && paramData.psid || '151982485752258823734586146'
                         },
                         recipient: {
-                            id: paramData && paramData.pageId || '103143677931009'
+                            id: paramData && paramData.pageId || '105590444570995'
                         },
                         postback: {
                             payload: {
                                 event: 'address-value',
                                 event_data: fName,
-                                uid: paramData && paramData.psid || '3451118698292526',
-                                sender: paramData && paramData.psid || '3451118698292526',
-                                pageId: paramData && paramData.pageId || '103143677931009'
+                                uid: paramData && paramData.psid || '151982485752258823734586146',
+                                sender: paramData && paramData.psid || '151982485752258823734586146',
+                                pageId: paramData && paramData.pageId || '105590444570995'
                             }
                         }
                     }]
@@ -70,6 +56,8 @@ submission = () => {
             // contentType: "application/json"
         });
     }
+    
+
 
   
     console.log(fName);
@@ -82,3 +70,6 @@ submission = () => {
     city.value = "";
     zip.value = "";
   }
+
+
+  
