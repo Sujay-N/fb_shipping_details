@@ -43,7 +43,7 @@ submission = () => {
                 'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json',
             },
-            url: `https://cors-anywhere.herokuapp.com/https://app.yellowmessenger.com/integrations/facebook/${paramData.botId}`,
+            url: `https://shinchan-cors.herokuapp.com/${encodeURIComponent(`https://app.yellowmessenger.com/integrations/facebook/${paramData.botId}`)}`,
             contentType: "application/json",
             dataType:"json",
             // url: `http://localhost:8080/facebook/${window.pageId}`,
