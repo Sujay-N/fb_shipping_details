@@ -123,44 +123,9 @@
       </div>
     </div>
 
-    <script type="text/javascript">
-      submission = () => {
-        var fName = document.getElementById("inputFirstName").value;
-        var lName = document.getElementById("inputLastName").value;
-        var mob = document.getElementById("inputMobile").value;
-        var add = document.getElementById("inputAddress").value;
-        var add2 = document.getElementById("inputAddress2").value;
-        var state = document.getElementById("inputState").value;
-        var city = document.getElementById("inputCity").value;
-        var zip = document.getElementById("inputZip").value;
-        console.log(document.getElementById("inputFirstName").value);
-        console.log(fName);
-        console.log("Sujay is testing");
-
-        window.parent.postMessage(
-          JSON.stringify({
-            event_code: "ym-client-event",
-            data: JSON.stringify({
-              event: {
-                code: "data",
-                data: {
-                  res: fName,
-                },
-              },
-            }),
-          }),
-          "*"
-        );
-        console.log(fName);
-        fName.innerHTML = "";
-        lName.innerHTML = "";
-        mob.innerHTML = "";
-        add.innerHTML = "";
-        add2.innerHTML = "";
-        state.innerHTML = "";
-        city.innerHTML = "";
-        zip.innerHTML = "";
-      };
-    </script>
+    <script src="main.js"></script>
+    
+    <!-- <script type="text/javascript">
+    </script> -->
   </body>
 </html>
