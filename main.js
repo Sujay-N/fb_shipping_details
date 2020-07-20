@@ -36,11 +36,13 @@ submission = () => {
             signature: '6cab9a2aada111452fa2db8ba663fb6e29208d76e6b27b8ec75e97482bf70d2f',
             headers: {
                 'Access-Control-Allow-Origin': '*',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            url: `https://cors-anywhere.herokuapp.com/https:app.yellowmessenger.com/integrations/facebook/${paramData.botId}`,
+            url: `https://cors-anywhere.herokuapp.com/https://app.yellowmessenger.com/integrations/facebook/${paramData.botId}`,
+            contentType: "application/json",
+            dataType:"json",
             // url: `http://localhost:8080/facebook/${window.pageId}`,
-            data: {
+            data:JSON.stringify( {
                 entry: [{
                     id: paramData && paramData.pageId || '105590444570995',
                     messaging: [{
@@ -61,13 +63,14 @@ submission = () => {
                         }
                     }]
                 }]
-            },
+            }),
             beforeSend: function (x) {
                 if (x && x.overrideMimeType) {
                     x.overrideMimeType("application/json;charset=UTF-8");
                 }
             },
             success: function () {
+                console.log("checking success..")
                 closeView();
             },
             // contentType: "application/json"
